@@ -5,7 +5,7 @@
 @section('title', 'Smart Labs')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Monitoring Rumah</h1>
 @stop
 
 @section('content')
@@ -124,9 +124,11 @@ var Chart = Highcharts.chart('container', {
     mqtt.subscribe(topic, {qos: 0});
     mqtt.subscribe(topic1, {qos: 0});
     mqtt.subscribe(topic2, {qos: 0});
+    mqtt.subscribe(topic3, {qos: 0});
     $('#topic').val(topic);
     $('#topic1').val(topic1);
     $('#topic2').val(topic2);
+    $('#topic3').val(topic3);
 
     //use the below if you want to publish to a topic on connect
     //message = new Paho.MQTT.Message("Hello World");
@@ -180,8 +182,14 @@ var Chart = Highcharts.chart('container', {
         }
 
     }
-
-
+    else if(topic == '/arifgozi/smartfan/fan1'){
+        if(payload=='0'){
+            document.getElementById('kipas').innerHTML = 'Mati';
+        }
+        else if(payload=='1'){
+            document.getElementById('kipas').innerHTML = 'Menyala';
+        }
+    }
   };
 
   $(document).ready(function() {
@@ -240,12 +248,12 @@ var Chart = Highcharts.chart('container', {
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3 id='kipas'>0</h3>
 
-              <p>Unique Visitors</p>
+              <p>Kipas</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="fas fa-wind"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
