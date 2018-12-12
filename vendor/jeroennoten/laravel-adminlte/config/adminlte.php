@@ -108,7 +108,7 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'REALTIME NAVIGATION',
 
         [
             'text' => 'Blog',
@@ -123,6 +123,25 @@ return [
         ],
         [
             'text'        => 'Controlling',
+            'url'         => 'controll',
+            'icon'        => 'play',
+            'label_color' => 'success',
+        ],
+        'OFFLINE NAVIGATION',
+
+        [
+            'text' => 'Blog',
+            'url'  => 'admin/blog',
+            'can'  => 'manage-blog',
+        ],
+        [
+            'text'        => 'Data Suhu',
+            'url'         => 'home',
+            'icon'        => 'dashboard',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Penggunaan Lampu',
             'url'         => 'controll',
             'icon'        => 'play',
             'label_color' => 'success',
