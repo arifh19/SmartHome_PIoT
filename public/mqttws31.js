@@ -85,7 +85,8 @@ if (typeof Paho === "undefined") {
 }
 
 Paho.MQTT = (function (global) {
-
+    var time = (new Date()).getTime();
+    var temporary = {x: time, y: parseInt(payload)};
 	// Private variables below, these are only visible inside the function closure
 	// which is used to define the module. 
 

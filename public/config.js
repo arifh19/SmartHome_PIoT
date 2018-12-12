@@ -2,7 +2,12 @@
 host = '10.33.109.37';	// hostname or IP address
 // host = '172.16.153.110';	// hostname or IP address
 port = 9001;
+//monitoring
 topic = '/arifgozi/smartfan/temp';		// topic to subscribe to
+topic1 = '/arifgozi/smartfan/lamp';
+topic2 = '/arifgozi/smartfan/door';
+
+//controlling
 useTLS = false;
 username = null;
 password = null;
