@@ -13,7 +13,9 @@
         "jeroennoten/laravel-adminlte": "^1.24",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "santigarcor/laratrust": "5.0.*"
+        "santigarcor/laratrust": "5.0.*",
+        "yajra/laravel-datatables-html": "3.*",
+        "yajra/laravel-datatables-oracle": "8.*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

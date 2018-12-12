@@ -27,8 +27,10 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
     );
 
@@ -40,6 +42,10 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         'Z' => 
         array (
             'Zend\\Diactoros\\' => 15,
+        ),
+        'Y' => 
+        array (
+            'Yajra\\DataTables\\' => 17,
         ),
         'X' => 
         array (
@@ -149,6 +155,7 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         'C' => 
         array (
             'Cron\\' => 5,
+            'Collective\\Html\\' => 16,
         ),
         'B' => 
         array (
@@ -170,6 +177,11 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         'Zend\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
+        'Yajra\\DataTables\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src',
+            1 => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -392,6 +404,10 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+        ),
         'BeyondCode\\DumpServer\\' => 
         array (
             0 => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src',
@@ -444,6 +460,8 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\LampuController' => __DIR__ . '/../..' . '/app/Http/Controllers/LampuController.php',
+        'App\\Http\\Controllers\\SuhuController' => __DIR__ . '/../..' . '/app/Http/Controllers/SuhuController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -472,6 +490,13 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
+        'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -4131,6 +4156,41 @@ class ComposerStaticInitd56fb9fa54b5f97d0280e69630256b10
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'Yajra\\DataTables\\ApiResourceDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/ApiResourceDataTable.php',
+        'Yajra\\DataTables\\CollectionDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/CollectionDataTable.php',
+        'Yajra\\DataTables\\Contracts\\DataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Contracts/DataTable.php',
+        'Yajra\\DataTables\\DataTableAbstract' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/DataTableAbstract.php',
+        'Yajra\\DataTables\\DataTables' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/DataTables.php',
+        'Yajra\\DataTables\\DataTablesServiceProvider' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/DataTablesServiceProvider.php',
+        'Yajra\\DataTables\\EloquentDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/EloquentDataTable.php',
+        'Yajra\\DataTables\\Exceptions\\Exception' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Exceptions/Exception.php',
+        'Yajra\\DataTables\\Facades\\DataTables' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Facades/DataTables.php',
+        'Yajra\\DataTables\\HtmlServiceProvider' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/HtmlServiceProvider.php',
+        'Yajra\\DataTables\\Html\\Builder' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Builder.php',
+        'Yajra\\DataTables\\Html\\Column' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Column.php',
+        'Yajra\\DataTables\\Html\\Editor' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor.php',
+        'Yajra\\DataTables\\Html\\Editor\\Boolean' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Boolean.php',
+        'Yajra\\DataTables\\Html\\Editor\\Checkbox' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Checkbox.php',
+        'Yajra\\DataTables\\Html\\Editor\\Date' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Date.php',
+        'Yajra\\DataTables\\Html\\Editor\\DateTime' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/DateTime.php',
+        'Yajra\\DataTables\\Html\\Editor\\Field' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Field.php',
+        'Yajra\\DataTables\\Html\\Editor\\Hidden' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Hidden.php',
+        'Yajra\\DataTables\\Html\\Editor\\Number' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Number.php',
+        'Yajra\\DataTables\\Html\\Editor\\Options' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Options.php',
+        'Yajra\\DataTables\\Html\\Editor\\Password' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Password.php',
+        'Yajra\\DataTables\\Html\\Editor\\Radio' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Radio.php',
+        'Yajra\\DataTables\\Html\\Editor\\ReadOnly' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/ReadOnly.php',
+        'Yajra\\DataTables\\Html\\Editor\\Select' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Select.php',
+        'Yajra\\DataTables\\Html\\Editor\\Text' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Text.php',
+        'Yajra\\DataTables\\Html\\Editor\\TextArea' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/TextArea.php',
+        'Yajra\\DataTables\\Html\\Editor\\Time' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Editor/Time.php',
+        'Yajra\\DataTables\\Html\\Parameters' => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src/Html/Parameters.php',
+        'Yajra\\DataTables\\Processors\\DataProcessor' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Processors/DataProcessor.php',
+        'Yajra\\DataTables\\Processors\\RowProcessor' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Processors/RowProcessor.php',
+        'Yajra\\DataTables\\QueryDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/QueryDataTable.php',
+        'Yajra\\DataTables\\Utilities\\Config' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Utilities/Config.php',
+        'Yajra\\DataTables\\Utilities\\Helper' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Utilities/Helper.php',
+        'Yajra\\DataTables\\Utilities\\Request' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Utilities/Request.php',
         'Zend\\Diactoros\\AbstractSerializer' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/AbstractSerializer.php',
         'Zend\\Diactoros\\CallbackStream' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/CallbackStream.php',
         'Zend\\Diactoros\\Exception\\DeprecatedMethodException' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/Exception/DeprecatedMethodException.php',

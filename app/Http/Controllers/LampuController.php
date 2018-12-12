@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Yajra\DataTables\Html\Builder;
+use Yajra\DataTables\Datatables;
 use App\Lampu;
 
 class LampuController extends Controller
@@ -19,6 +21,22 @@ class LampuController extends Controller
         $response =  $lampu;
 
         return response()->json($response,200);
+    }
+    public function indexLampu(Request $request, Builder $htmlBuilder)
+    {
+        if ($request->ajax()) {
+
+            $lampu = Lampu::select(['id', 'status']);
+
+            return Datatables::of($lampu)
+            ->make(true);
+        }
+
+        $html = $htmlBuilder
+        ->addColumn(['data' => 'created_at', 'name' => 'Tanggal', 'title' => 'Tanggal'])
+        ->addColumn(['data' => 'status', 'name' => 'status', 'title' => 'Status']);
+
+        return view('lampu.index')->with(compact('html'));
     }
 
     /**

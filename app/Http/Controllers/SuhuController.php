@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Yajra\DataTables\DataTables;
+use Yajra\DataTables\Html\Builder;
 use Illuminate\Http\Request;
 use App\Suhu;
 
@@ -13,6 +14,30 @@ class SuhuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        $suhus = Suhu::all();
+
+        $response =  $suhus;
+
+        return response()->json($response,200);
+    }
+    public function indexSuhu(Request $request, Builder $htmlBuilder)
+    {
+        if ($request->ajax()) {
+
+            $suhu = Suhu::select(['id', 'suhu']);
+
+            return Datatables::of($suhu)
+            ->make(true);
+        }
+
+        $html = $htmlBuilder
+        ->addColumn(['data' => 'created_at', 'name' => 'Tanggal', 'title' => 'Tanggal'])
+        ->addColumn(['data' => 'suhu', 'name' => 'suhu', 'title' => 'Suhu']);
+
+        return view('suhu.index')->with(compact('html'));
+    }
+    public function tabel()
     {
         $suhus = Suhu::all();
 

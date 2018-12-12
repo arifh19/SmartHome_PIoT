@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/controll', 'HomeController@controll')->name('controll');
+Route::get('/suhu', 'SuhuController@indexSuhu')->name('suhu');
+Route::get('/lampu', 'LampuController@indexLampu')->name('lampu');

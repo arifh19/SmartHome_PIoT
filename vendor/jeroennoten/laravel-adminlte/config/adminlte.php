@@ -125,13 +125,13 @@ return [
         'OFFLINE NAVIGATION',
         [
             'text'        => 'Data Suhu',
-            'url'         => 'home',
+            'url'         => 'suhu',
             'icon'        => 'fas fa-temperature-low',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Penggunaan Lampu',
-            'url'         => 'controll',
+            'url'         => 'lampu',
             'icon'        => 'far fa-lightbulb',
             'label_color' => 'success',
         ],
