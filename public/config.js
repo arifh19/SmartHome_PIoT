@@ -9,6 +9,9 @@ topic2 = '/arifgozi/smartfan/door';
 topic3 = '/arifgozi/smartfan/fan1';
 
 //controlling
+topic4 = '/arifgozi/smartfan/fan';	
+topic5 = '/arifgozi/smartfan/lamp1';
+
 useTLS = false;
 username = null;
 password = null;

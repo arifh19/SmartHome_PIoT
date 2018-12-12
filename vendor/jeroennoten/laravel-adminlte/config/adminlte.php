@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Smart Lab',
+    'title' => 'Smart Home',
 
     'title_prefix' => '',
 
@@ -123,7 +123,7 @@ return [
         ],
         [
             'text'        => 'Controlling',
-            'url'         => 'home',
+            'url'         => 'controll',
             'icon'        => 'play',
             'label_color' => 'success',
         ],
