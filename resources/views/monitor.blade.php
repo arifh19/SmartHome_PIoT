@@ -147,7 +147,7 @@ var Chart = Highcharts.chart('container', {
     var payload = message.payloadString;
 
     if(topic == '/arifgozi/smartfan/temp'){
-        xhr.open("POST", 'http://localhost/api/v1/suhu', true);
+        xhr.open("POST", 'http://10.33.109.93/api/v1/suhu', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
             suhu: payload
@@ -164,7 +164,7 @@ var Chart = Highcharts.chart('container', {
         document.getElementById('suhu').innerHTML = payload;
     }
     else if(topic == '/arifgozi/smartfan/lamp'){
-        xhr.open("POST", 'http://localhost/api/v1/lampu', true);
+        xhr.open("POST", 'http://10.33.109.93/api/v1/lampu', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
             status: payload
