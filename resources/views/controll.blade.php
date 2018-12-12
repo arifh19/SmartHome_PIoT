@@ -5,7 +5,7 @@
 @section('title', 'Smart Home')
 
 @section('content_header')
-   <h1>Monitoring Rumah</h1>
+   <h1>Kontrol Rumah</h1>
   <script src="mqttws31.js" type="text/javascript"></script>
   <script src="jquery.min.js" type="text/javascript"></script>
   <script src="config.js" type="text/javascript"></script>
@@ -51,8 +51,14 @@
   function onConnect() {
     $('#status').val('Connected to ' + host + ':' + port + path);
     // Connection succeeded; subscribe to our topic
+    mqtt.subscribe(topic1, {qos: 0});
+    mqtt.subscribe(topic3, {qos: 0});
     mqtt.subscribe(topic4, {qos: 0});
+    mqtt.subscribe(topic5, {qos: 0});
+    $('#topic1').val(topic1);
+    $('#topic3').val(topic3);
     $('#topic4').val(topic4);
+    $('#topic5').val(topic5);
 
     //use the below if you want to publish to a topic on connect
     //message = new Paho.MQTT.Message("Hello World");
@@ -68,7 +74,7 @@
       message = new Paho.MQTT.Message(Message);
       message.destinationName = topic4;
       mqtt.send(message);
-      document.getElementById('publish').value ="";
+      document.getElementById('kipas1').innerHTML = 'Menyala';
   }
   function sendOFFKipas(e){
     //use the below if you want to publish to a topic on connect
@@ -78,7 +84,27 @@
       message = new Paho.MQTT.Message(Message);
       message.destinationName = topic4;
       mqtt.send(message);
-      document.getElementById('publish1').value ="";
+      document.getElementById('kipas1').innerHTML = 'Mati';
+  }
+  function sendONLampu(e){
+    //use the below if you want to publish to a topic on connect
+    var key=e.keyCode || e.which;
+      var Message = '1';
+      // message = new Paho.MQTT.Message(client_name+" : "+Message);
+      message = new Paho.MQTT.Message(Message);
+      message.destinationName = topic5;
+      mqtt.send(message);
+      document.getElementById('lampu1').innerHTML = 'Menyala';
+  }
+  function sendOFFLampu(e){
+    //use the below if you want to publish to a topic on connect
+    var key=e.keyCode || e.which;
+      var Message = '0';
+      // message = new Paho.MQTT.Message(client_name+" : "+Message);
+      message = new Paho.MQTT.Message(Message);
+      message.destinationName = topic5;
+      mqtt.send(message);
+      document.getElementById('lampu1').innerHTML = 'Mati';
   }
   function onConnectionLost(response) {
     setTimeout(MQTTconnect, reconnectTimeout);
@@ -91,7 +117,20 @@
     var topic = message.destinationName;
     var payload = message.payloadString;
     $('#ws').prepend(payload+"</br>");
-
+    if(topic == '/arifgozi/smartfan/fan1'){
+        if(payload=='0'){
+            document.getElementById('kipas1').innerHTML = 'Mati';
+        }
+        else if(payload=='1'){
+            document.getElementById('kipas1').innerHTML = 'Menyala';
+        }
+    }else if(topic == '/arifgozi/smartfan/lamp'){
+        if(payload=='1'){
+            document.getElementById('lampu1').innerHTML = 'Menyala';
+        }else{
+            document.getElementById('lampu1').innerHTML = 'Padam';
+        }
+    }
     // dataChart.push(payload);
     // document.getElementById('ws').innerHTML = payload;
 
@@ -107,13 +146,6 @@
 @stop
 
 @section('content')
-    <h1>Mosquitto Websockets</h1>
-    <div>
-    <div>Subscribed to <input type='text' id='topic' disabled />
-        Status: <input type='text' id='status' size="80" disabled /></div>
-        <button type="button" id="publish" value="1" onclick="sendMessage(event)" class="btn btn-success">ON</button>
-        <button type="button" id="publish1" value="0" onclick="sendMessage1(event)" class="btn btn-success">OFF</button>
-        <p id='name'></p>
 
         <div class="row">
                 <div class="col-lg-3 col-xs-6">
@@ -125,15 +157,17 @@
                                 </div>
                                 <br>
                                 <a class="btn btn-app" onclick='sendONKipas(event)'>
-                                        <i class="fa fa-play"></i> Play
-                                      </a>
-                                      <a class="btn btn-app" onclick='sendOFFKipas(event)'>
-
-                                            <i class="fa fa-stop"></i> Stop
-                                          </a>
-                                      <div class="icon">
-                                            <i class="fas fa-wind"></i>
-                                          </div>
+                                    <i class="fa fa-play"></i> Play
+                                </a>
+                                <a class="btn btn-app" onclick='sendOFFKipas(event)'>
+                                    <i class="fa fa-stop"></i> Stop
+                                </a>
+                                <a class="btn btn-app">
+                                         <b><p id='kipas1'>Mati</p></b>
+                                    </a>
+                                <div class="icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
                             </div>
                   </div>
                 </div>
@@ -145,12 +179,15 @@
                                     <b>Kontrol Lampu</b>
                                 </div>
                                 <br>
-                                <a class="btn btn-app">
+                                <a class="btn btn-app" onclick='sendONLampu(event)'>
                                         <i class="fa fa-play"></i> Play
                                       </a>
-                                      <a class="btn btn-app">
+                                      <a class="btn btn-app" onclick='sendOFFLampu(event)'>
                                             <i class="fa fa-stop"></i> Stop
                                           </a>
+                                          <a class="btn btn-app" >
+                                                <b><p id='lampu1'>Mati</p></b>
+                                           </a>
                                       <div class="icon">
                                             <i class="far fa-lightbulb"></i>
                                           </div>
