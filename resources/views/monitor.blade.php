@@ -147,6 +147,12 @@ var Chart = Highcharts.chart('container', {
     var payload = message.payloadString;
 
     if(topic == '/arifgozi/smartfan/temp'){
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", 'http://localhost:8000/api/v1/suhu', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            suhu: payload
+        }));
         var time = (new Date()).getTime();
         var temporary = {x: time, y: parseInt(payload)};
         if(temp.length > 10) {
