@@ -20,7 +20,7 @@ Route::group(['prefix' =>'v1', 'middleware' => 'api'], function(){
     Route::resource('suhu', 'SuhuController',[
         'only' => ['store','index']
     ]);
-    Route::resource('kecepatan', 'LampuController',[
+    Route::resource('lampu', 'LampuController',[
         'only' => ['store','index']
     ]);
 });
