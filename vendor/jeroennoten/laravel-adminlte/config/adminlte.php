@@ -111,39 +111,28 @@ return [
         'REALTIME NAVIGATION',
 
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
             'text'        => 'Monitoring',
             'url'         => 'home',
-            'icon'        => 'dashboard',
+            'icon'        => 'fas fa-tachometer-alt',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Controlling',
             'url'         => 'controll',
-            'icon'        => 'play',
+            'icon'        => 'fas fa-gamepad',
             'label_color' => 'success',
         ],
         'OFFLINE NAVIGATION',
-
-        [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
         [
             'text'        => 'Data Suhu',
             'url'         => 'home',
-            'icon'        => 'dashboard',
+            'icon'        => 'fas fa-temperature-low',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Penggunaan Lampu',
             'url'         => 'controll',
-            'icon'        => 'play',
+            'icon'        => 'far fa-lightbulb',
             'label_color' => 'success',
         ],
         'ACCOUNT SETTINGS',
