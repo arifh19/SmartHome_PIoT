@@ -106,7 +106,7 @@
         };
     </script>
     <?php
-    $db_host = '10.33.109.93:33061'; // Nama Server
+    $db_host = '127.0.0.1:33061'; // Nama Server
     $db_user = 'root'; // User Server
     $db_pass = 'secret'; // Password Server
     $db_name = 'projectIoT'; // Nama Database
