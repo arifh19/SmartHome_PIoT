@@ -24,7 +24,7 @@ class LampuController extends Controller
     }
     public function indexLampu(Request $request, Builder $htmlBuilder)
     {
-        $query = Lampu::select(['id', 'status'])->get();
+        $query = Lampu::select(['id', 'status']);
         if ($request->ajax()) {
 
             $lampu = Lampu::select(['id', 'status'])->get();
@@ -37,7 +37,7 @@ class LampuController extends Controller
         ->addColumn(['data' => 'created_at', 'name' => 'Tanggal', 'title' => 'Tanggal'])
         ->addColumn(['data' => 'status', 'name' => 'status', 'title' => 'Status']);
 
-        return view('lampu.index')->with(compact('query'));
+        return view('lampu.index')->with(compact('row'));
     }
 
     /**
