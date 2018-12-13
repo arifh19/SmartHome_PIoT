@@ -25,9 +25,9 @@ class SuhuController extends Controller
     {
         if ($request->ajax()) {
 
-            $suhu = Suhu::select(['id', 'suhu']);
+            $suhu = Suhu::select(['id', 'suhu'])->get();
 
-            return Datatables::of($suhu)
+            return DataTables::of($suhu)
             ->make(true);
         }
 

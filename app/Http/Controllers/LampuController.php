@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\Html\Builder;
-use Yajra\DataTables\Datatables;
+use Yajra\DataTables\DataTables;
 use App\Lampu;
 
 class LampuController extends Controller
@@ -26,9 +26,9 @@ class LampuController extends Controller
     {
         if ($request->ajax()) {
 
-            $lampu = Lampu::select(['id', 'status']);
+            $lampu = Lampu::select(['id', 'status'])->get();
 
-            return Datatables::of($lampu)
+            return DataTables::of($lampu)
             ->make(true);
         }
 
