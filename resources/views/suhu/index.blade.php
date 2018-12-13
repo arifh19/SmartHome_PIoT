@@ -105,51 +105,7 @@
             document.getElementById('container').innerHTML= '<br><br><img src="http://v3.preloaders.net/preloaders/725/Alternative.gif"> <p style="font-family: arial, sans-serif">Tunggu sebentar ya bos, sedang loading..</p>';
         };
     </script>
-    <?php
-    $db_host = '127.0.0.1:33061'; // Nama Server
-    $db_user = 'root'; // User Server
-    $db_pass = 'secret'; // Password Server
-    $db_name = 'projectIoT'; // Nama Database
 
-    $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-    if (!$conn) {
-        die ('Gagal terhubung MySQL: ' . mysqli_connect_error());
-    }
-
-    $sql = 'SELECT id, suhu, created_at
-            FROM suhus';
-
-    $query = mysqli_query($conn, $sql);
-
-    if (!$query) {
-        die ('SQL Error: ' . mysqli_error($conn));
-    }
-
-    echo '<div class="box-body">
-            <table class="table table-bordered">
-              <tr>
-                <th style="width: 10px">ID</th>
-                <th>Suhu</th>
-                <th>Waktu</th>
-              </tr>';
-
-    while ($row = mysqli_fetch_array($query))
-    {
-        echo '<tr>
-                <td>'.$row['id'].'</td>
-                <td>'.$row['suhu'].'</td>
-                <td>'.$row['created_at'].'</td>
-            </tr>';
-    }
-    echo '
-        </tbody>
-    </table>';
-
-    // Apakah kita perlu menjalankan fungsi mysqli_free_result() ini? baca bagian VII
-    mysqli_free_result($query);
-
-    // Apakah kita perlu menjalankan fungsi mysqli_close() ini? baca bagian VII
-    mysqli_close($conn); ?>
 @endsection
 
 @section('scripts')
