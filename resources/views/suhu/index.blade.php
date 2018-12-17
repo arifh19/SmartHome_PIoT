@@ -36,7 +36,7 @@
                 var obj = JSON.parse(this.responseText);
 
                 // Baca semua bari JSON, tambahkan ke variable array
-                for (index = 0, len = obj.length; index < len; index++) {
+                for (index = 0, len = obj.length; index < 20; index++) {
                     mylabel.push(obj[index].created_at);
                     mydata.push(obj[index].suhu);
                 }
@@ -55,7 +55,7 @@
         //=========================================================================
         // Baca data dari web server
         //=========================================================================
-        request.open("GET", "http://www.komputronika.com/iot/baca/coba/json", true);
+        request.open("GET", "http://10.33.109.93/api/v1/suhu", true);
         request.send();
         //=========================================================================
 
